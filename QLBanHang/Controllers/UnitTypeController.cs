@@ -10,11 +10,11 @@ namespace QLBanHang.Controllers
 {
    [ApiController]
     [Route("api/[controller]")]
-   public  class UserController : ControllerBase
+   public  class UnitTypeController : ControllerBase
    {
      private readonly AppDBContext _context;
 
-      public UserController(AppDBContext context)
+      public UnitTypeController(AppDBContext context)
       {
          _context = context;
       }

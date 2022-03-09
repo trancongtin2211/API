@@ -35,7 +35,7 @@ namespace QLBanHang
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "QLBanHang", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "QLBanHang", Version = "v1",Description = "ASP.NET Core Web API" });
             });
         }
 
