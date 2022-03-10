@@ -25,6 +25,7 @@ namespace QLBanHang.Data
     public DbSet<Status> Status {get; set;}
     public DbSet<Unit> Unit {get; set;}
     public DbSet<UnitType> UnitType {get; set;}
+    public DbSet<Restaurant> Restaurant {get; set;}
     public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
     {
         Database.EnsureCreated();
