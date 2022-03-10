@@ -10,7 +10,7 @@ using QLBanHang.Data;
 namespace QLBanHang.Data.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20220309032816_adjustDB")]
+    [Migration("20220309133931_adjustDB")]
     partial class adjustDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -276,6 +276,39 @@ namespace QLBanHang.Data.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("OrderItem");
+                });
+
+            modelBuilder.Entity("QLBanHang.Models.Restaurant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Updated")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Restaurant");
                 });
 
             modelBuilder.Entity("QLBanHang.Models.Role", b =>
