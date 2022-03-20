@@ -10,8 +10,8 @@ using QLBanHang.Data;
 namespace QLBanHang.Data.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20220309133931_adjustDB")]
-    partial class adjustDB
+    [Migration("20220317122426_adjustDBcontext")]
+    partial class adjustDBcontext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
