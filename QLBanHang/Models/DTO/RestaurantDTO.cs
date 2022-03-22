@@ -1,11 +1,8 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-namespace QLBanHang.Models
+namespace Models.DTO
 {
-    public class Restaurant{
-
-        [Key]
-        public int Id { get; set; }
+   public class RestaurantDTO
+   {
+       public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Phone { get; set; }
@@ -13,8 +10,7 @@ namespace QLBanHang.Models
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
         public bool Deleted { get; set; }
-        public virtual User CreatedUser{get; set;}
-        public virtual User UpdatedUser{get; set;}
-        
-    }
+        public UserDTO CreatedUser{get; set;}
+        public UserDTO UpdatedUser{get; set;}
+   } 
 }

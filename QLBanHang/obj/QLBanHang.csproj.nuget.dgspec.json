@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus TUF\\Desktop\\API\\qlbanhang\\QLBanHang.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\API\\QLbanhang\\QLBanHang.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus TUF\\Desktop\\API\\qlbanhang\\QLBanHang.csproj": {
+    "C:\\Users\\Admin\\Desktop\\API\\QLbanhang\\QLBanHang.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus TUF\\Desktop\\API\\qlbanhang\\QLBanHang.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\API\\QLbanhang\\QLBanHang.csproj",
         "projectName": "QLBanHang",
-        "projectPath": "C:\\Users\\Asus TUF\\Desktop\\API\\qlbanhang\\QLBanHang.csproj",
-        "packagesPath": "C:\\Users\\Asus TUF\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus TUF\\Desktop\\API\\qlbanhang\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\API\\QLbanhang\\QLBanHang.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\API\\QLbanhang\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.14, )"

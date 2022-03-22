@@ -16,5 +16,6 @@ namespace QLBanHang.Models
         public double TotalPrice { get; set; } 
         public double PaidAmount { get; set; } 
         public virtual IList<OrderItem> OrderItem { get; set; }
+        
     }
 }

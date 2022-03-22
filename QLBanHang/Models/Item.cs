@@ -18,5 +18,6 @@ namespace QLBanHang.Models
         public virtual Unit Unit { get; set; }
         public virtual Category Category { get; set; }
         public virtual IList<ItemImage> ItemImage { get; set; }
+        
     }
 }

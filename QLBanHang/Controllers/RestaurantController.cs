@@ -26,7 +26,11 @@ namespace QLBanHang.Controllers
         [HttpGet]
         public IEnumerable<Restaurant> Get()
         {
-            return _context.Restaurant.ToList();
+            return _context.Restaurant.Where(c => !c.Deleted)
+                                        .Include(r => r.CreatedUser)
+                                        .Include(r => r.UpdatedUser)
+                                        .ToList();
+                                
         }
 
         /// <summary>
