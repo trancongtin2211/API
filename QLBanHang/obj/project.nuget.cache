@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ip9P2UuxiZubIXlZ0WMQJWD+1/1Grv5ru2uUf8BUo0jszRtYb1nEmSB+68J2oD93n9mIVUyfWLnWAJr0RFF66w==",
+  "dgSpecHash": "DpDA58/qgW9Qe2HgRcAV3OaI/EevzzmIEB5ImaIRxHZOCglloamjKgXxqP8FU4jjokYGkpEOG3RKab8j3Moj5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus TUF\\Desktop\\API\\QLBanHang\\QLBanHang.csproj",
+  "projectFilePath": "C:\\Users\\Asus TUF\\Desktop\\API\\qlbanhang\\QLBanHang.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus TUF\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Asus TUF\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.14\\microsoft.aspnetcore.cryptography.internal.5.0.14.nupkg.sha512",

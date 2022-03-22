@@ -18,6 +18,7 @@ namespace QLBanHang
 {
     public class Startup
     {
+        private readonly string _loginOrigin="_localorigin";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,6 +33,15 @@ namespace QLBanHang
             services.AddDbContext<AppDBContext>(opt=>{
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddCors(opt=>{
+                opt.AddPolicy(_loginOrigin,builder=>{
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -50,6 +60,8 @@ namespace QLBanHang
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(_loginOrigin);
 
             app.UseRouting();
 

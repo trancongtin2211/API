@@ -33,7 +33,7 @@ namespace QLBanHang.Controllers
         }
 
         [HttpPost]
-        public Role Post([FromQuery] Role Role)
+        public Role Post([FromBody] Role Role)
         {
             _context.Role.Add(Role);
             _context.SaveChanges();

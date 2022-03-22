@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QLBanHang.Data.Migrations
 {
-    public partial class adjustDB : Migration
+    public partial class adjustDBcontext : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
