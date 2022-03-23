@@ -11,6 +11,7 @@ namespace QLBanHang.Models
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
         public bool Deleted { get; set; }
+        public virtual Restaurant Restaurant { get; set; }
         
     }
 }

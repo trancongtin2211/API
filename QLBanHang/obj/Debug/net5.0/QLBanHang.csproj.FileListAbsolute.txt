@@ -130,3 +130,9 @@ C:\Users\Admin\Desktop\API\QLbanhang\obj\Debug\net5.0\QLBanHang.dll
 C:\Users\Admin\Desktop\API\QLbanhang\obj\Debug\net5.0\ref\QLBanHang.dll
 C:\Users\Admin\Desktop\API\QLbanhang\obj\Debug\net5.0\QLBanHang.pdb
 C:\Users\Admin\Desktop\API\QLbanhang\obj\Debug\net5.0\QLBanHang.genruntimeconfig.cache
+C:\Users\Asus TUF\Desktop\API\qlbanhang\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Asus TUF\Desktop\API\qlbanhang\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Asus TUF\Desktop\API\qlbanhang\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Asus TUF\Desktop\API\qlbanhang\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\Asus TUF\Desktop\API\qlbanhang\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Asus TUF\Desktop\API\qlbanhang\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

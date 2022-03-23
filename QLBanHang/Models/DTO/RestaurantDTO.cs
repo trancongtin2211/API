@@ -1,3 +1,5 @@
+using System;
+
 namespace Models.DTO
 {
    public class RestaurantDTO
@@ -12,5 +14,6 @@ namespace Models.DTO
         public bool Deleted { get; set; }
         public UserDTO CreatedUser{get; set;}
         public UserDTO UpdatedUser{get; set;}
+        
    } 
 }
