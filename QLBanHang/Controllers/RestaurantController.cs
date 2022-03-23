@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Models.DTO;
 using QLBanHang.Data;
 using QLBanHang.Models;
 
@@ -14,24 +18,35 @@ namespace QLBanHang.Controllers
    public class RestaurantController : ControllerBase
    {
      private readonly AppDBContext _context;
+     private readonly IMapper _mapper;
 
-      public RestaurantController(AppDBContext context)
+      public RestaurantController(AppDBContext context, IMapper mapper)
       {
          _context = context;
+         _mapper = mapper;
       }
+
         /// <summary>
         /// Lấy tất cả danh sách Restaurants
         /// </summary>
         /// <returns>Danh sách Restaurants</returns>
         [HttpGet]
-        public IEnumerable<Restaurant> Get()
+        public async Task<ActionResult<IEnumerable<RestaurantDTO>>> Get()
         {
-            return _context.Restaurant.Where(c => !c.Deleted)
-                                        .Include(r => r.CreatedUser)
-                                        .Include(r => r.UpdatedUser)
-                                        .ToList();
-                                
+            try
+            {
+                var data = await _context.Restaurant
+                    .Include(r => r.CreatedUser)
+                    .Include(r => r.UpdatedUser).ToArrayAsync();
+                var model = _mapper.Map<IEnumerable<RestaurantDTO>>(data);
+                return new JsonResult(model);
+            }
+            catch(ArgumentException ex)
+            {
+                return BadRequest("Not good");
+            }
         }
+
 
         /// <summary>
         /// Lấy tất cả danh sách Restaurants với Id
@@ -51,12 +66,17 @@ namespace QLBanHang.Controllers
         [HttpPost]
         public Restaurant Post([FromBody] Restaurant Restaurant)
         {
+            var createdUser = _context.User.Find(Restaurant.CreatedUser.Id);
+            Restaurant.CreatedUser = createdUser;
+            var updatedUser = _context.User.Find(Restaurant.UpdatedUser.Id);
+            Restaurant.UpdatedUser = updatedUser;
+
             _context.Restaurant.Add(Restaurant);
             _context.SaveChanges();
             return Restaurant;
         }
       
-        /// <summary>
+        /// <summary> 
         /// Update Restaurant
         /// </summary>
         /// <returns>Restaurant</returns>
@@ -72,6 +92,9 @@ namespace QLBanHang.Controllers
             restaurant.Address = Restaurant.Address;
             restaurant.Phone = Restaurant.Phone;
             restaurant.Description = Restaurant.Description;
+            restaurant.Deleted = Restaurant.Deleted;
+            var updatedUser = _context.User.Find((Restaurant.UpdatedUser != null) ? Restaurant.UpdatedUser.Id : 1);
+            restaurant.UpdatedUser = updatedUser;
             _context.SaveChanges();
             return restaurant;
         }

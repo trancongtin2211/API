@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Models.Mapping;
 using QLBanHang.Data;
 
 namespace QLBanHang
@@ -47,7 +49,7 @@ namespace QLBanHang
             var mapperConfig = new MapperConfiguration(mc =>{
                 mc.AddProfile(new MappingProfile());
             });
-            Imapper mapper = mapper.CreateMapper();
+            IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
             //Mapper.Initialize(cfg.AddProfile<MappingProfile>());
             //services.AddAutoMapper(mapper);

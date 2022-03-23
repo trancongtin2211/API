@@ -24,5 +24,6 @@ namespace QLBanHang.Models
         public IEnumerable<User> CreatedUser {get; set;}
         [NotMapped]
         public IEnumerable<User> UpdatedUser {get; set;}
+        
     }
 }
