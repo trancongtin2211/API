@@ -14,5 +14,6 @@ namespace QLBanHang.Models
         
         public virtual Status Status { get; set; }
         public virtual Guest Guest { get; set; }
+        
     }
 }

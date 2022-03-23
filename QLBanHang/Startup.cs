@@ -29,11 +29,12 @@ namespace QLBanHang
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            //DBContext
             services.AddDbContext<AppDBContext>(opt=>{
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            //Add Cors
             services.AddCors(opt=>{
                 opt.AddPolicy(_loginOrigin,builder=>{
                     builder.AllowAnyOrigin();
@@ -41,6 +42,15 @@ namespace QLBanHang
                     builder.AllowAnyHeader();
                 });
             });
+
+            //Auto Mapper Configurations
+            var mapperConfig = new MapperConfiguration(mc =>{
+                mc.AddProfile(new MappingProfile());
+            });
+            Imapper mapper = mapper.CreateMapper();
+            services.AddSingleton(mapper);
+            //Mapper.Initialize(cfg.AddProfile<MappingProfile>());
+            //services.AddAutoMapper(mapper);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

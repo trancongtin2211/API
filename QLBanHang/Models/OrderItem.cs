@@ -15,5 +15,6 @@ namespace QLBanHang.Models
         public bool Voided { get; set; } 
         public double SalePrice { get; set; } 
         public virtual Item Item { get; set; }
+        
     }
 }
