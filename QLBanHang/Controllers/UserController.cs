@@ -77,7 +77,7 @@ namespace QLBanHang.Controllers
             }
             catch(ArgumentException ex)
             {
-               return BadRequest("not good");
+               return BadRequest(ex.Message);
             }
       }
 

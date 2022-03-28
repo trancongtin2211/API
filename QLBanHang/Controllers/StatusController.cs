@@ -41,7 +41,7 @@ namespace QLBanHang.Controllers
             }
             catch (ArgumentException ex)
             {
-                return BadRequest("Not good");
+                return BadRequest(ex.Message);
             }
         }
 
@@ -74,29 +74,29 @@ namespace QLBanHang.Controllers
             return Status;
         }
 
-      //   /// <summary>
-      //   /// Thêm mới Statuss
-      //   /// </summary>
-      //   /// <returns>Statuss</returns>
-      //   [HttpPost]
-      //   public async Task<Object> Add([FromBody] Status Status)
-      //   {
-      //      try
-      //      {
-      //       var createdUser = _context.User.Find(Status.CreatedUser.Id);
-      //       Status.CreatedUser = createdUser;
-      //       var updatedUser = _context.User.Find(Status.UpdatedUser.Id);
-      //       Status.UpdatedUser = updatedUser;
+        // /// <summary>
+        // /// Thêm mới Statuss
+        // /// </summary>
+        // /// <returns>Statuss</returns>
+        // [HttpPost]
+        // public async Task<Object> Add([FromBody] Status Status)
+        // {
+        //    try
+        //    {
+        //     var createdUser =  _context.User.Find(Status.CreatedUser.Id);
+        //     Status.CreatedUser = createdUser;
+        //     var updatedUser = _context.User.Find(Status.UpdatedUser.Id);
+        //     Status.UpdatedUser = updatedUser;
 
-      //       _context.Status.Add(Status);
-      //       _context.SaveChanges();
-      //       return Status;
-      //      }
-      //      catch(Exception ex)
-      //      {
-      //         return await Task.FromResult(ex.Message);
-      //      }
-      //   }
+        //     _context.Status.Add(Status);
+        //     _context.SaveChanges();
+        //     return Status;
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //       return await Task.FromResult(ex.Message);
+        //    }
+        // }
 
         /// <summary> 
         /// Update Status
